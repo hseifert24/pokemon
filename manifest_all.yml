@@ -4,7 +4,7 @@ applications:
   host: pokelist_jf_hs
   name: pokelist_jf_hs
   path: .
-  domain: app1.cftest.allstate.com
+  domain: cfapps.io
   instances: 1
   memory: 256M
-  buildpack: nodejs_buildpack_v1_5_17
+  buildpack: nodejs_buildpack
