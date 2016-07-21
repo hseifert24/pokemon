@@ -14,7 +14,6 @@ class PokemonCreator extends React.Component {
     const name = this.refs.name.value;
     const image = this.refs.image.value;
     const body = JSON.stringify({ name, image });
-    debugger;
     fetch('/api/pokemon', { method: 'post', body, headers: { 'Content-Type': 'application/json' } })
     .then(r => r.json())
     .then((j) => {

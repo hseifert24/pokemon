@@ -1,4 +1,5 @@
-/* eslint-disable func-names */
+/* eslint-disable func-names, no-underscore-dangle */
+import jwt from 'jwt-simple';
 import mongoose from 'mongoose';
 import bcrypt from 'bcrypt';
 const Schema = mongoose.Schema;
@@ -14,6 +15,14 @@ const schema = new Schema({
 
 schema.methods.validPassword = function (password) {
   return bcrypt.compareSync(password, this.password);
+};
+
+schema.methods.token = function () {
+  const sub = this._id;
+  const exp = (Date.now() / 1000) + 60;
+  const secret = process.env.SECRET;
+
+  return jwt.encode({ sub, exp }, secret);
 };
 
 schema.pre('save', function (next) {

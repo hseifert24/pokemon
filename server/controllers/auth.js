@@ -18,12 +18,13 @@ router.post('/register', (req, res) => {
     if (!user) {
       return res.status(400).send();
     }
-
-    return res.status(200).send();
+    const token = req.user.token();
+    return res.status(200).send({ token });
   });
 });
 
 // login
 router.post('/login', passport.authenticate('local', { session: false }), (req, res) => {
-  res.send({ payload: req.user });
+  const token = req.user.token();
+  res.send({ token });
 });

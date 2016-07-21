@@ -22,6 +22,7 @@ export default () => (
         <ul className="nav navbar-nav navbar-right">
           <li><Link to="/"><i className="fa fa-home fa-fw"></i> Home</Link></li>
           <li><Link to="/PokemonCreate"><i className="fa fa-bolt fa-fw"></i> PokeCreate</Link></li>
+          <li><Link to="/Register"><i className="fa fa-fire fa-fw"></i> Register</Link></li>
         </ul>
       </div>
     </div>

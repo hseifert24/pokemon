@@ -1,7 +1,7 @@
 import App from './components/App';
 import Home from './components/Home';
 import PokemonCreate from './components/PokemonCreate';
-import PokeList from './components/PokeList';
+import Register from './components/Register';
 
 import React from 'react';
 import { render } from 'react-dom';
@@ -15,7 +15,7 @@ render(
     <Route path="/" component={App}>
       <IndexRoute component={Home} />
       <Route path="pokemoncreate" component={PokemonCreate} />
-      <Route path="pokelist" component={PokeList} />
+      <Route path="Register" component={Register} />
     </Route>
   </Router>
   , document.getElementById('root'));
